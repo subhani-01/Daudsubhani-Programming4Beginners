@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+int main() {
+    char ch;
+    char s[100];
+    char sen[100];
+    
+    // Input
+    scanf("%c", &ch);          // read character
+    scanf("%s", s);            // read string (no spaces)
+    getchar();                 // consume leftover newline
+    fgets(sen, 100, stdin);    // read full sentence (with spaces)
+    
+    // Output
+    printf("%c\n", ch);
+    printf("%s\n", s);
+    printf("%s", sen);
+    return 0;
+}
