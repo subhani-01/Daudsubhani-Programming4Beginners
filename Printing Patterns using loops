@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    int size = 2 * n - 1;
+    
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            // distances to edges
+            int top = i;
+            int bottom = size - 1 - i;
+            int left = j;
+            int right = size - 1 - j;
+            
+            int minDist = top;
+            if (bottom < minDist) minDist = bottom;
+            if (left < minDist) minDist = left;
+            if (right < minDist) minDist = right;
+            
+            int val = n - minDist;
+            printf("%d", val);
+            
+            if (j < size - 1) printf(" ");
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
