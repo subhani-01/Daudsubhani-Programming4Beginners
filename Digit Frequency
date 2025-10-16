@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[1001];
+    // Read the input line (string with spaces not needed, so scanf "%s" works)
+    scanf("%1000s", s);
+    
+    int freq[10] = {0};
+    int len = strlen(s);
+    for (int i = 0; i < len; i++) {
+        char c = s[i];
+        if (c >= '0' && c <= '9') {
+            freq[c - '0']++;
+        }
+    }
+    
+    // Print frequencies of digits 0 through 9
+    for (int d = 0; d < 10; d++) {
+        printf("%d", freq[d]);
+        if (d < 9) {
+            printf(" ");
+        }
+    }
+    printf("\n");
+    
+    return 0;
+}
